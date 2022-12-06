@@ -1,4 +1,6 @@
-List Operate(List<int> row, int score, SharedPreferences sharedPref) {
+import 'package:shared_preferences/shared_preferences.dart';
+
+List operate(List<int> row, int score, SharedPreferences sharedPref) {
   row = slide(row);
   List result = combine(row, score, sharedPref);
   int sc = result[0];
@@ -42,7 +44,7 @@ List combine(List<int> row, int score, SharedPreferences sharedPref) {
     if (a == b) {
       row[i] = a + b;
       score += row[i];
-      int sc = sharedPref.getInt('high_score');
+      int? sc = sharedPref.getInt('high_score');
       if (sc == null) {
         sharedPref.setInt('high_score', score);
       } else {

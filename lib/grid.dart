@@ -27,8 +27,15 @@ List<List<int>> copyGrid(List<List<int>> grid) {
       extraGrid[i][j] = grid[i][j];
     }
   }
-
   return extraGrid;
+}
+
+List<List<int>> flipGrid(List<List<int>> grid) {
+  for (int i = 0; i < 4; i++) {
+    List<int> row = grid[i];
+    grid[i] = row.reversed.toList();
+  }
+  return grid;
 }
 
 List<List<int>> transposeGrid(List<List<int>> grid) {
@@ -50,7 +57,6 @@ List<List<int>> addNumber(List<List<int>> grid, List<List<int>> gridNew) {
       }
     }
   }
-
   if (options.length > 0) {
     int spotRandomIndex = new Random().nextInt(options.length);
     Point spot = options[spotRandomIndex];
