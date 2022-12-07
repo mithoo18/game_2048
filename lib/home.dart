@@ -22,7 +22,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<List<int>> grid = [];
   List<List<int>> gridNew = [];
-  SharedPreferences sharedPreferences;
+  late SharedPreferences sharedPreferences;
   int score = 0;
   bool isgameOver = false;
   bool isgameWon = false;
